@@ -29,36 +29,55 @@ def bubblesort(B):
     print("number of conditonals=", conditional_counter)
     return B
 
-
-
+def bubblesort_counter(B):
+    assignment_counter=0
+    conditional_counter=0
+    index_length = len(B) -1
+    assignment_counter+=1
+    sorted = False
+    assignment_counter+=1
+    while not sorted:
+        sorted = True
+        assignment_counter+=1
+        conditional_counter+=1
+        for i in range(0, index_length):
+            assignment_counter+=1
+            conditional_counter+=1
+            if B[i] > B[i+1]:
+                sorted = False
+                assignment_counter+=3
+                B[i], B[i+1] = B[i+1], B[i]
+    print("number of assignments=", assignment_counter)
+    print("number of conditonals=", conditional_counter)
+   
+    
     
 
-def quicksort(x):
-    assignment_counter = 0
-    conditional_counter = 0
-    assignment_counter += 2
-    length = len(sort)
+def quicksort(A):
+    assignment_counter=0
+    conditional_counter=0
+    assignment_counter+=1
     conditional_counter+=1
-    if length <= 1:
-        return sort
-    else:
-        assignment_counter+=1
-        #remove and return- from the end of the list
-        pivot = sort.pop()
-    items_greater = []
-    items_lower = []
-    for item in sort:
-        assignment_counter+=4
-        conditional_counter+=1
-        if item > pivot:
-            items_greater.append(item)
-
+    if len(A) <= 1:
+        return A
+    L = []
+    R = []
+    assignment_counter+=2
+    p =  np.random.choice(range(len(A))) # random pivot
+    E = [A[p]] # this is a list of all the things that are equal to the pivot.
+    assignment_counter+=3
+    conditional_counter+=3
+    for i in range(len(A)):
+        if i == p:
+            continue
+        if A[i] < A[p]:
+            L.append(A[i])
+        elif A[i] > A[p]:
+            R.append(A[i])
         else:
-            items_lower.append(item)
-    print("number of assignments=", assignment_counter)
-    print("number of conditional=", conditional_counter)
+            E.append(A[i])
+    return quicksort(L) + E + quicksort(R)
 
-    return quicksort(items_lower) + [pivot] +quicksort(items_greater)
 
 
 def InsertionSort(A):

@@ -37,17 +37,54 @@ def test_bubblesort():
     a = np.array(['apple', 'banana','zebra', 'red'])
     assert np.array_equal(np.array(algs.bubblesort(a)), np.array(['apple', 'banana', 'red', 'zebra']))
     
-    
-    #Duplicted assert statement
-    #assert np.array_equal(algs.bubblesort([4,4,5,5,7,7,1,1])), np.array(([1,1,4,4,5,5,7,7]))
-    
-    # for now, just attempt to call the bubblesort function, should
-    # actually check output
+   
+
    
 
 def test_quicksort():
+    
+    A = np.array([3, 5, 4, 2, 6, 7, 1, 8])
+    assert np.array_equal(np.array(algs.quicksort(A)), np.array([1, 2, 3, 4, 5, 6, 7, 8]))
+  
+    
+    #Empty array
+    empty = np.array([])
+    assert np.array_equal(np.array(algs.quicksort(empty)), np.array([]))
+    
+    #Duplication array
+    duplication = np.array([4,4,5,5,7,7,1,1])
+    assert np.array_equal(np.array(algs.quicksort(duplication)), np.array([1, 1, 4, 4, 5, 5, 7, 7]))
+    
+    #list with odd number of elements
+    odd = np.array([1,3,2,4,9])
+    assert np.array_equal(np.array(algs.quicksort(odd)), np.array([1,2,3,4,9]))
+                    
+    #list with characters
+                    
+    a = np.array(['apple', 'banana','zebra', 'red'])
+    assert np.array_equal(np.array(algs.quicksort(a)), np.array(['apple', 'banana', 'red', 'zebra']))
 
-    x = np.array([1,2,4,0,1])
-    # for now, just attempt to call the quicksort function, should
-    # actually check output
+
+def test_InsertionSort():
+    A = np.array([3, 5, 4, 2, 6, 7, 1, 8])
+    assert np.array_equal(np.array(algs.InsertionSort(A)), np.array([1, 2, 3, 4, 5, 6, 7, 8]))
+  
+    
+    #Empty array
+    empty = np.array([])
+    assert np.array_equal(np.array(algs.InsertionSort(empty)), np.array([]))
+    
+    #Duplication array
+    duplication = np.array([4,4,5,5,7,7,1,1])
+    assert np.array_equal(np.array(algs.InsertionSort(duplication)), np.array([1, 1, 4, 4, 5, 5, 7, 7]))
+    
+    #list with odd number of elements
+    odd = np.array([1,3,2,4,9])
+    assert np.array_equal(np.array(algs.InsertionSort(odd)), np.array([1,2,3,4,9]))
+                    
+    #list with characters
+                    
+    a = np.array(['apple', 'banana','zebra', 'red'])
+    assert np.array_equal(np.array(algs.InsertionSort(a)), np.array(['apple', 'banana', 'red', 'zebra']))
+    
    
